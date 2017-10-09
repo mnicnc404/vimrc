@@ -22,34 +22,35 @@ if has("gui_macvim")
 endif
 
 syntax enable
-set clipboard=unnamed
+set autoindent
+set background=dark
 set backspace=indent,eol,start
-set laststatus=2
+set clipboard=unnamed
+set encoding=utf-8
 set expandtab
-set tabstop=4
-set softtabstop=4
+set foldlevel=99
+set foldmethod=indent
+set hlsearch
+set laststatus=2
+set nu
 set shiftwidth=4
+set showmatch
 set smarttab
 set smartcase
-
-set autoindent
+set softtabstop=4
 set t_Co=256
-set nu
-set showmatch
+set tabstop=4
+
 let python_highlight_all=1
-set background=dark
 " colorscheme solarized
 colorscheme gruvbox
 " let g:gruvbox_contrast_dark='medium'
 
-set foldmethod=indent
-set foldlevel=99
 
 nnoremap <space> za
 nnoremap <C-j> ddp
 nnoremap <C-k> ddkP
 
-set encoding=utf-8
 
 " let g:ycm_autoclose_preview_window_after_completion=1
 " map <leader>g :YcmCompleter GoToDefinitionElseDeclaration<CR>

@@ -13,12 +13,13 @@ Plug 'altercation/vim-colors-solarized'
 Plug 'sickill/vim-monokai'
 Plug 'Shougo/denite.nvim'
 Plug 'tmhedberg/SimpylFold'
+Plug 'JamshedVesuna/vim-markdown-preview'
 " Plug 'python-mode/python-mode'
-" Plug 'Valloric/YouCompleteMe'
+Plug 'Valloric/YouCompleteMe'
 call plug#end()
 
 if has("gui_macvim")
-    set guifont=Inconsolata-g\ for\ Powerline:h12
+    set guifont=Monaco\ for\ Powerline:h12
 endif
 
 syntax enable
@@ -59,11 +60,13 @@ map <C-n> :NERDTreeToggle<CR>
 let NERDTreeIgnore=['\.pyc$', '\~$']
 
 " Setting up powerline
-set rtp+=/usr/local/lib/python3.6/site-packages/powerline/bindings/vim
-let g:minBufExplForceSyntaxEnable=1
-python3 from powerline.vim import setup as powerline_setup
-python3 powerline_setup()
-python3 del powerline_setup
+if has("python3")
+    set rtp+=/usr/local/lib/python3.6/site-packages/powerline/bindings/vim
+    let g:minBufExplForceSyntaxEnable=1
+    python3 from powerline.vim import setup as powerline_setup
+    python3 powerline_setup()
+    python3 del powerline_setup
+endif
 
 " Setting up syntastic
 let g:syntastic_python_checkers = ['flake8']
@@ -79,3 +82,7 @@ let g:syntastic_style_warning_symbol = "≈"
 " let g:pymode_python = 'python3'
 " let g:pymode_doc = 0
 
+" vim-markdown
+let vim_markdown_preview_github=1
+let vim_markdown_preview_hotkey='<C-m>'
+let vim_markdown_preview_browser='Google Chrome'

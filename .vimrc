@@ -47,11 +47,7 @@ let python_highlight_all=1
 colorscheme gruvbox
 " let g:gruvbox_contrast_dark='medium'
 
-
 nnoremap <space> za
-nnoremap <C-j> ddp
-nnoremap <C-k> ddkP
-
 
 " let g:ycm_autoclose_preview_window_after_completion=1
 " map <leader>g :YcmCompleter GoToDefinitionElseDeclaration<CR>

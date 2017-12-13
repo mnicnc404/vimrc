@@ -15,7 +15,7 @@ Plug 'Shougo/denite.nvim'
 Plug 'tmhedberg/SimpylFold'
 Plug 'JamshedVesuna/vim-markdown-preview'
 " Plug 'python-mode/python-mode'
-Plug 'Valloric/YouCompleteMe'
+" Plug 'Valloric/YouCompleteMe'
 call plug#end()
 
 if has("gui_macvim")
@@ -64,8 +64,11 @@ if has("python3")
     python3 del powerline_setup
 endif
 
+au BufRead,BufNewFile *.pyx set filetype=python
 " Setting up syntastic
 let g:syntastic_python_checkers = ['flake8']
+let g:syntastic_c_checkers = ['Cppcheck']
+let g:syntastic_cpp_checkers = ['Cppcheck']
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 let g:syntastic_error_symbol = "✗"

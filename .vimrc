@@ -1,16 +1,15 @@
 set nocp
 
 call plug#begin('~/.vim/plugged')
+Plug 'tpope/vim-fugitive'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
 Plug 'vim-syntastic/syntastic'
 Plug 'xolox/vim-notes'
 Plug 'xolox/vim-misc'
-Plug 'tomasr/molokai'
 Plug 'morhetz/gruvbox'
-" Plug 'nvie/vim-flake8'
 Plug 'scrooloose/nerdtree'
-Plug 'jnurmine/Zenburn'
 Plug 'altercation/vim-colors-solarized'
-Plug 'sickill/vim-monokai'
 Plug 'Shougo/denite.nvim'
 Plug 'tmhedberg/SimpylFold'
 Plug 'JamshedVesuna/vim-markdown-preview'
@@ -18,6 +17,7 @@ Plug 'JamshedVesuna/vim-markdown-preview'
 " Plug 'Valloric/YouCompleteMe'
 call plug#end()
 
+" Basically useless
 if has("gui_macvim")
     set guifont=Monaco\ for\ Powerline:h12
 endif
@@ -55,15 +55,6 @@ nnoremap <space> za
 map <C-n> :NERDTreeToggle<CR>
 let NERDTreeIgnore=['\.pyc$', '\~$']
 
-" Setting up powerline
-if has("python3")
-    set rtp+=/usr/local/lib/python3.6/site-packages/powerline/bindings/vim
-    let g:minBufExplForceSyntaxEnable=1
-    python3 from powerline.vim import setup as powerline_setup
-    python3 powerline_setup()
-    python3 del powerline_setup
-endif
-
 au BufRead,BufNewFile *.pyx set filetype=python
 " Setting up syntastic
 let g:syntastic_python_checkers = ['flake8']
@@ -85,3 +76,33 @@ let g:syntastic_style_warning_symbol = "≈"
 let vim_markdown_preview_github=1
 let vim_markdown_preview_hotkey='<C-m>'
 let vim_markdown_preview_browser='Google Chrome'
+
+" airline
+let g:airline_theme='bubblegum'
+let g:airline_powerline_fonts = 1
+if !exists('g:airline_symbols')
+    let g:airline_symbols = {}
+endif
+
+" unicode symbols
+let g:airline_left_sep = '»'
+let g:airline_left_sep = '▶'
+let g:airline_right_sep = '«'
+let g:airline_right_sep = '◀'
+let g:airline_symbols.linenr = '␊'
+let g:airline_symbols.linenr = '␤'
+let g:airline_symbols.linenr = '¶'
+let g:airline_symbols.branch = '⎇'
+let g:airline_symbols.paste = 'ρ'
+let g:airline_symbols.paste = 'Þ'
+let g:airline_symbols.paste = '∥'
+let g:airline_symbols.whitespace = 'Ξ'
+
+" airline symbols
+let g:airline_left_sep = ''
+let g:airline_left_alt_sep = ''
+let g:airline_right_sep = ''
+let g:airline_right_alt_sep = ''
+let g:airline_symbols.branch = ''
+let g:airline_symbols.readonly = ''
+let g:airline_symbols.linenr = ''

@@ -1,6 +1,13 @@
 set nocp
 
+let $LANG="zh_TW.UTF-8"
+set langmenu=zh_tw.utf-8
+set encoding=utf8
+source $VIMRUNTIME/delmenu.vim
+source $VIMRUNTIME/menu.vim
+
 call plug#begin('~/.vim/plugged')
+Plug 'lervag/vimtex'
 Plug 'tpope/vim-fugitive'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
@@ -18,16 +25,13 @@ Plug 'JamshedVesuna/vim-markdown-preview'
 call plug#end()
 
 " Basically useless
-if has("gui_macvim")
-    set guifont=Monaco\ for\ Powerline:h12
-endif
+set guifont=Monaco\ for\ Powerline:h10
 
 syntax enable
 set autoindent
 set background=dark
 set backspace=indent,eol,start
 set clipboard=unnamed
-set encoding=utf-8
 set expandtab
 set foldlevel=99
 set foldmethod=indent
@@ -45,7 +49,7 @@ set tabstop=4
 let python_highlight_all=1
 " colorscheme solarized
 colorscheme gruvbox
-" let g:gruvbox_contrast_dark='medium'
+let g:gruvbox_contrast_dark='medium'
 
 nnoremap <space> za
 
@@ -106,3 +110,14 @@ let g:airline_right_alt_sep = ''
 let g:airline_symbols.branch = ''
 let g:airline_symbols.readonly = ''
 let g:airline_symbols.linenr = ''
+
+let g:vimtex_view_method = 'general'
+if has("win32")
+    let g:vimtex_view_general_viewer = 'texworks.exe'
+else
+    let g:vimtex_view_general_viewer = 'skim'
+endif
+let g:vimtex_compiler_latexmk = {
+    \ 'callback' : 0,
+    \ 'continuous' : 0,
+    \}

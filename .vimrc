@@ -111,13 +111,13 @@ let g:airline_symbols.branch = ''
 let g:airline_symbols.readonly = ''
 let g:airline_symbols.linenr = ''
 
-let g:vimtex_view_method = 'general'
+" let g:vimtex_view_method = 'general'
+let g:tex_flavor = 'latex'
+let g:vimtex_view_automatic = 1
 if has("win32")
     let g:vimtex_view_general_viewer = 'texworks.exe'
-else
-    let g:vimtex_view_general_viewer = 'skim'
 endif
 let g:vimtex_compiler_latexmk = {
     \ 'callback' : 0,
-    \ 'continuous' : 0,
+    \ 'continuous' : 1,
     \}

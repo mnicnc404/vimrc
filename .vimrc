@@ -28,6 +28,7 @@ call plug#end()
 set guifont=Monaco\ for\ Powerline:h10
 
 syntax enable
+set mouse=a
 set autoindent
 set background=dark
 set backspace=indent,eol,start

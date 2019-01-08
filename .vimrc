@@ -1,7 +1,7 @@
 set nocp
 
-let $LANG="zh_TW.UTF-8"
-set langmenu=zh_tw.utf-8
+let $LANG="en_US"
+set langmenu=en_US
 set encoding=utf8
 source $VIMRUNTIME/delmenu.vim
 source $VIMRUNTIME/menu.vim

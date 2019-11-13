@@ -7,6 +7,7 @@ source $VIMRUNTIME/delmenu.vim
 source $VIMRUNTIME/menu.vim
 
 call plug#begin('~/.vim/plugged')
+Plug 'aserebryakov/vim-todo-lists'
 Plug 'lervag/vimtex'
 Plug 'tpope/vim-fugitive'
 Plug 'vim-airline/vim-airline'
@@ -20,6 +21,7 @@ Plug 'altercation/vim-colors-solarized'
 Plug 'Shougo/denite.nvim'
 Plug 'tmhedberg/SimpylFold'
 Plug 'JamshedVesuna/vim-markdown-preview'
+Plug 'fatih/vim-go'
 " Plug 'python-mode/python-mode'
 " Plug 'Valloric/YouCompleteMe'
 call plug#end()
@@ -47,6 +49,8 @@ set softtabstop=4
 set t_Co=256
 set tabstop=4
 
+autocmd FileType yaml setlocal shiftwidth=2 softtabstop=2 expandtab
+
 let python_highlight_all=1
 " colorscheme solarized
 colorscheme gruvbox
@@ -63,14 +67,15 @@ let NERDTreeIgnore=['\.pyc$', '\~$']
 au BufRead,BufNewFile *.pyx set filetype=python
 " Setting up syntastic
 let g:syntastic_python_checkers = ['flake8']
-let g:syntastic_c_checkers = ['Cppcheck']
-let g:syntastic_cpp_checkers = ['Cppcheck']
+let g:syntastic_c_checkers = ['cppcheck']
+let g:syntastic_cpp_checkers = ['cppcheck']
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 let g:syntastic_error_symbol = "✗"
 let g:syntastic_warning_symbol = "∆"
 let g:syntastic_style_error_symbol = "✠"
 let g:syntastic_style_warning_symbol = "≈"
+let g:ycm_show_diagnostics_ui = 0
 
 " " Setting up python-mode
 " let g:pymode_options_max_line_length=120

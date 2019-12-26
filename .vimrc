@@ -69,6 +69,7 @@ au BufRead,BufNewFile *.pyx set filetype=python
 let g:syntastic_python_checkers = ['flake8']
 let g:syntastic_c_checkers = ['cppcheck']
 let g:syntastic_cpp_checkers = ['cppcheck']
+let g:syntastic_cpp_cppcheck_args = ' --std=c++11 --language=c++'
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 let g:syntastic_error_symbol = "✗"

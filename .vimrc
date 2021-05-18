@@ -22,6 +22,7 @@ Plug 'Shougo/denite.nvim'
 Plug 'tmhedberg/SimpylFold'
 Plug 'JamshedVesuna/vim-markdown-preview'
 Plug 'fatih/vim-go'
+Plug 'easymotion/vim-easymotion'
 " Plug 'python-mode/python-mode'
 " Plug 'Valloric/YouCompleteMe'
 call plug#end()

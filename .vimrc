@@ -23,6 +23,7 @@ Plug 'tmhedberg/SimpylFold'
 Plug 'JamshedVesuna/vim-markdown-preview'
 Plug 'fatih/vim-go'
 Plug 'easymotion/vim-easymotion'
+Plug 'goerz/jupytext.vim'
 " Plug 'python-mode/python-mode'
 " Plug 'Valloric/YouCompleteMe'
 call plug#end()
@@ -49,6 +50,7 @@ set smartcase
 set softtabstop=4
 set t_Co=256
 set tabstop=4
+set cursorline
 
 autocmd FileType yaml setlocal shiftwidth=2 softtabstop=2 expandtab
 

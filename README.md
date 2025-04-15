@@ -1,10 +1,17 @@
-My personal vim configuration file.
+# [DEPRECATED] Vim Configuration
 
-I'm a newbie to Vim so don't be surprised if you see something weird.
+> I’ve since switched to Neovim. Check out my Neovim setup here:
+> 👉 [nvim-init-lua](https://github.com/mnicnc404/nvim-init-lua)
+
+---
+
+This is my personal Vim configuration.
+I’m still learning Vim, so don’t be surprised if some things look a bit odd.
 
 ## Installation
 
-0. I mostly use python at work so make sure you have flake8 installed (`pip/conda install flake8`).
+0. I primarily use Python at work, so make sure `flake8` is installed:
+   `pip install flake8` or `conda install flake8`
 1. [Install vim-plug](https://github.com/junegunn/vim-plug)
-2. Put `.vimrc` in your `~` or `~/.vim/`.
-3. `vim -c "PlugInstall"` to install all other dependencies.
+2. Place `.vimrc` in your home directory (`~/` or `~/.vim/`)
+3. Run `vim -c "PlugInstall"` to install all plugins
